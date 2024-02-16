@@ -4,10 +4,10 @@ import { BsCartCheckFill } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import RoundedBox from "../../../../components/RoundedBox";
 
-type cardTypes = {
-  cardClass: string;
-  ele: any;
-};
+// type cardTypes = {
+//   cardClass: string;
+//   ele: any;
+// };
 const Card = (props: any) => {
   const navigate = useNavigate();
   const { cardClass, name, active, inactive, total, id } = props;
