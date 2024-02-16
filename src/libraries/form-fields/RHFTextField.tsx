@@ -55,7 +55,6 @@ const RHFTextField: React.FC<TextFieldProps> = ({
   fullWidth,
   disabled,
   onClick,
-  onKeyPress,
   onChange,
   helperText,
   variant,

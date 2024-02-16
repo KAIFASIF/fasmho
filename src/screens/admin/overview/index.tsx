@@ -1,9 +1,6 @@
 import FaultOverviewTable from "./FaultOverviewTable";
-
 import CardSection from "./card-section";
 import Statistics from "./Statistics";
-
-import OverviewGraph from "./OverviewGraph";
 import { fetchData, fetchFaultOverview } from "../../../service/overviewApi";
 import { useEffect, useState } from "react";
 import { faultOveviewData, overViewData } from "../../../utils/tempData";
@@ -43,15 +40,13 @@ const Overview = () => {
 
   return (
     <Layout isLoading={isLoading}>
-      <Navbar  screen="Overview" />
+      <Navbar screen="Overview" />
       <div className="px-10 pt-5 z-20 w-full h-full">
         <div className="flex flex-wrap bg-white z-40 gap-4 p-2">
           <div className="w-[100%] lg:w-[15%]  shrink-0">
             <Statistics statistics={statistics} />
           </div>
-          <div className="w-[100%] lg:w-[30%]   shrink-0 mt-">
-            <OverviewGraph />
-          </div>
+
           <div className="w-[100%] lg:w-[50%]   shrink-0">
             <FaultOverviewTable data={faultOverview} />
           </div>

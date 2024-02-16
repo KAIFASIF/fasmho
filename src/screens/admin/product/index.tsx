@@ -40,7 +40,9 @@ const Product = () => {
   };
 
   const handleRefreshData = (newPage: number, newPageSize: number): any => {
+
     setPage(newPage);
+    setPage(page);
     setSize(newPageSize);
   };
   return (

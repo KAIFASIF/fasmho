@@ -52,7 +52,7 @@ const RHFCheckedField: React.FC<RHFCheckedFieldProps> = ({
         rules={{
           required: required && "Please select an option",
         }}
-        render={({ field }) => (
+        render={({}) => (
           <FormControlLabel
             control={
               <Checkbox

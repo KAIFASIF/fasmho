@@ -25,7 +25,6 @@ type RHFRadioFieldProps = {
 const RHFRadioField: React.FC<RHFRadioFieldProps> = ({
   label,
   name,
-  defaultValue,
   required,
   errorMessage,
   options,

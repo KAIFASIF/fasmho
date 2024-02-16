@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Child1 = ({first, updateFUnction}:any) => {
+const Child1 = ({first}:any) => {
     console.log("child 1 rendered")
 
   return (

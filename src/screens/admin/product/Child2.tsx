@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 
 const Child2 = ({ seocnd, updateFUnction }: any) => {
-  const [childOne, setchildOne] = useState("");
+  // const [childOne, setchildOne] = useState("");
   console.log("child 2 rendered");
   return (
     <div>
