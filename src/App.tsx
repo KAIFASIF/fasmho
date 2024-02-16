@@ -1,35 +1,111 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { lazy, Suspense } from "react";
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  RouterProvider,
+  Route,
+  Outlet,
+  Navigate,
+} from "react-router-dom";
+import RoleWrapper from "./components/app-layout/RoleWrapper";
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const Signin = lazy(() => import("./screens/signin"));
+  const Overview = lazy(() => import("./screens/admin/overview"));
+  const Dashboard = lazy(() => import("./screens/admin/dashboard"));
+  const VehicleData = lazy(() => import("./screens/admin/vehicle-data"));
+  const AlarmStatus = lazy(() => import("./screens/admin/alarm-status"));
+  const BmsStatus = lazy(() => import("./screens/admin/bms-status"));
+  const Product = lazy(() => import("./screens/admin/product"));
+  const auth = true;
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <RouterProvider
+      router={createBrowserRouter(
+        createRoutesFromElements(
+          <Route>
+            {auth ? (
+              <Route path="/" element={<RoleWrapper role="ROLE_USER" />}>
+                <Route
+                  index
+                  path="/"
+                  element={
+                    <Suspense>
+                      <Overview />
+                    </Suspense>
+                  }
+                />
 
-export default App
+                <Route
+                  path="/dashboard"
+                  element={
+                    <Suspense>
+                      <Dashboard />
+                    </Suspense>
+                  }
+                />
+                <Route
+                  path="/alarm-status"
+                  element={
+                    <Suspense>
+                      <AlarmStatus />
+                    </Suspense>
+                  }
+                />
+                <Route
+                  path="/bms-status"
+                  element={
+                    <Suspense>
+                      <BmsStatus />
+                    </Suspense>
+                  }
+                />
+                <Route
+                  path="/vehicle-data"
+                  element={
+                    <Suspense>
+                      <VehicleData />
+                    </Suspense>
+                  }
+                />
+
+                <Route
+                  path="/product"
+                  element={
+                    <Suspense>
+                      <Product />
+                    </Suspense>
+                  }
+                />
+                <Route
+                  path="/product/:id"
+                  element={
+                    <Suspense>
+                      <Product />
+                    </Suspense>
+                  }
+                />
+
+                <Route path="*" element={<Navigate to="/" replace />} />
+              </Route>
+            ) : (
+              <Route path="/" element={<Outlet />}>
+                <Route
+                  index
+                  element={
+                    <Suspense>
+                      <Signin />
+                    </Suspense>
+                  }
+                />
+                <Route path="*" element={<Navigate to="/" replace />} />
+              </Route>
+            )}
+          </Route>
+        )
+      )}
+    />
+  );
+};
+
+export default App;
