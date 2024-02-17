@@ -1,7 +1,6 @@
 import CellVoltage from "./CellVoltage";
 import { Link } from "react-router-dom";
 import ChargeSection from "./ChargeSection";
-import Header from "./Header";
 import { useEffect, useState } from "react";
 import { fetchDashboardData } from "../../../service/dashboardApi";
 import { dashboardData, stateOfChargeGraphData } from "../../../utils/tempData";
@@ -9,7 +8,7 @@ import Layout from "../../../components/Layout";
 import VehicleDataSection from "./vehicleDataSection";
 import Temperature from "./Temperature";
 import Counts from "./Counts";
-import Navbar from "../../../components/Navbar";
+import Header from "./Header";
 
 const Dashboard = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -38,7 +37,6 @@ const Dashboard = () => {
 
   return (
     <Layout isLoading={isLoading}>
-      <Navbar  screen="Dashboard" />
       <div className="flex flex-col items-center px-10 pt-5 w-full h-full ">
         {/* header Section */}
         <header className="flex  items-center w-full gap-x-4  mt-2">

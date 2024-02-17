@@ -1,16 +1,13 @@
-import { memo, createElement} from "react";
+import { memo, createElement } from "react";
 import { menus } from "../../data/menu";
 import { Link, useLocation } from "react-router-dom";
 import { HiMenuAlt3 } from "react-icons/hi";
 
-
-const Sidebar = ({open, setOpen}:any) => {
+const Sidebar = ({ open, setOpen }: any) => {
   const location = useLocation();
 
   return (
-    <div
-      className={`bg-gray-200 w-full  flex flex-col justify-between h-full`}
-    >
+    <div className={`bg-gray-200 w-full  flex flex-col justify-between h-full`}>
       <div className="flex flex-col h-full  w-full">
         <div className="py-3  flex justify-end px-3 ">
           <HiMenuAlt3
@@ -20,7 +17,11 @@ const Sidebar = ({open, setOpen}:any) => {
           />
         </div>
         <div className="flex  justify-center px-3 ">
-          <img src="/assets/images/FES_Logo.png" alt="Fashmo logo Image" className="w-16 h-auto" />
+          <img
+            src="/assets/images/FES_Logo.png"
+            alt="Fashmo logo Image"
+            className="w-16 h-auto"
+          />
         </div>
         <div className="mt-4 flex flex-col gap-4 relative  ">
           {menus.length > 0 &&
@@ -67,4 +68,3 @@ const Sidebar = ({open, setOpen}:any) => {
 };
 
 export default memo(Sidebar);
-

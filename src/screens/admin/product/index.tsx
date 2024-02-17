@@ -1,10 +1,9 @@
-import { memo, useEffect, useState } from "react";
+import { memo, useCallback, useEffect, useState } from "react";
 import Table from "../../../libraries/Table";
 import ProductRow from "./ProductRow";
-import { fetchDashboardData } from "../../../service/dashboardApi";
 import { productsData } from "../../../utils/tempData";
 import Layout from "../../../components/Layout";
-import Navbar from "../../../components/Navbar";
+import { fetchProductList } from "../../../service/productApi";
 
 const headers: string[] = [
   "Vehicle No. / BMS ID - Time",
@@ -18,18 +17,23 @@ const headers: string[] = [
 const Product = () => {
   const [data, setData] = useState<any>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [count, setCount] = useState<number>(100);
   const [page, setPage] = useState<number>(0);
-  const [size, setSize] = useState<number>(3);
+  const [size, setSize] = useState<number>(5);
 
   useEffect(() => {
-    fetchProducts();
-  }, []);
+    // console.log(`page: ${page} size: ${size}`)
+    handleProducts();
+  }, [page, size]);
 
-  const fetchProducts = async () => {
+  const handleProducts = async () => {
+    // console.log(`main page: ${newPages} mainsize: ${newSizes}`)
     try {
       setIsLoading(true);
-      const res = await fetchDashboardData();
+      const res = await fetchProductList(page, size);
+      // console.log(res)
       if (res?.status === 200) {
+        setCount(100);
         setData(productsData);
         // console.log("sssss: ", overViewData?.customers)
       }
@@ -39,16 +43,29 @@ const Product = () => {
     }
   };
 
-  const handleRefreshData = (newPage: number, newPageSize: number): any => {
+  const handleRefreshData = useCallback(
+    (newPage: number, newPageSize: number) => {
+      // console.log(`handle refresh data page: ${newPage}  size: ${newPageSize}`);
+      setPage(newPage + 1);
+      setSize(newPageSize);
+    },
+    []
+  );
+  // const handleRefreshData = (newPage: number, newPageSize: number): any => {
+  //   console.log(`handle refresh data page: ${newPage}  size: ${newPageSize}`)
+  // setPage(newPage+1);
+  // setSize(newPageSize);
+  // if (newPage) {
+  //   // alert(newPage)
+  // } else {
+  //   console.log(`handle sizeee page: ${newPage}  size: ${newPageSize}`)
+  //   // alert(newPageSize)
+  // }
+  // };
 
-    setPage(newPage);
-    setPage(page);
-    setSize(newPageSize);
-  };
   return (
     <Layout isLoading={isLoading}>
       <div className=" w-full">
-        <Navbar screen="ProductList" />
         <div className="mt-5 px-10 ">
           <Table
             headers={headers}
@@ -56,7 +73,7 @@ const Product = () => {
             tableData={data}
             refreshTableData={handleRefreshData}
             paginationOptions={{
-              totalPageCount: 100,
+              totalPageCount: count,
               defaultPageSize: size,
             }}
           />

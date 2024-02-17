@@ -7,7 +7,6 @@ import Layout from "../../../components/Layout";
 import { fetchDashboardData } from "../../../service/dashboardApi";
 import { alarmStatusCurrent, alarmStatusData } from "../../../utils/tempData";
 import Button from "../../../components/Button";
-import Navbar from "../../../components/Navbar";
 
 const AlarmStatus = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -37,7 +36,6 @@ const AlarmStatus = () => {
   };
   return (
     <Layout isLoading={isLoading}>
-      <Navbar  screen="Alarm Status" />
       <div className="w-full px-10 pt-5">
         <section className="flex justify-end w-full pr-2">
           <div className="flex w-40">

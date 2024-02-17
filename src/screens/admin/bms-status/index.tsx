@@ -4,7 +4,6 @@ import Layout from "../../../components/Layout";
 import { fetchDashboardData } from "../../../service/dashboardApi";
 import { bmsStatus, bmsTemperatureGraphData } from "../../../utils/tempData";
 import TemperatureGraphSection from "./TemperatureGraphSection";
-import Navbar from "../../../components/Navbar";
 
 const BmsStatus = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -32,7 +31,6 @@ const BmsStatus = () => {
   };
   return (
     <Layout isLoading={isLoading}>
-      <Navbar screen="BMS Status" />
       <div className="px-10 pt-5 w-full">
         <StatusSection {...data} />
         <TemperatureGraphSection data={temperatureGraphData}/>
