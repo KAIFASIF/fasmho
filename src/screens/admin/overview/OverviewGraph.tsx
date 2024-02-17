@@ -86,12 +86,13 @@ import Chart from "react-apexcharts";
 import { ApexOptions } from "apexcharts";
 
 const OverviewGraph = () => {
-  const [chartOptions, setChartOptions] = useState<ApexOptions>({
+ const options:ApexOptions={
     chart: {
       id: "donut-chart",
       width: "100%",
       height: "100%",
     },
+    series:[44, 55, 13, 43, 22],
     labels: [],
     dataLabels: {
       enabled: false,
@@ -99,9 +100,8 @@ const OverviewGraph = () => {
     legend: {
       show: false,
     },
-  });
+  }
 
-  const [series, setSeries] = useState([44, 55, 13, 43, 22]);
 
   return (
     <div
@@ -109,8 +109,8 @@ const OverviewGraph = () => {
       style={{ margin: 0, padding: 0 }}
     >
       <Chart
-        options={chartOptions}
-        series={series}
+        options={options}
+        series={options?.series}
         type="donut"
         className="w-full"
       />
@@ -118,4 +118,42 @@ const OverviewGraph = () => {
   );
 };
 
-export default OverviewGraph;
+export default React.memo(OverviewGraph)
+// import React, { useState } from "react";
+// import Chart from "react-apexcharts";
+// import { ApexOptions } from "apexcharts";
+
+// const OverviewGraph = () => {
+//   const [chartOptions, setChartOptions] = useState<ApexOptions>({
+//     chart: {
+//       id: "donut-chart",
+//       width: "100%",
+//       height: "100%",
+//     },
+//     labels: [],
+//     dataLabels: {
+//       enabled: false,
+//     },
+//     legend: {
+//       show: false,
+//     },
+//   });
+
+//   const [series, setSeries] = useState([44, 55, 13, 43, 22]);
+
+//   return (
+//     <div
+//       className="flex justify-center items-center w-full h-full border-2 border-gray-200"
+//       style={{ margin: 0, padding: 0 }}
+//     >
+//       <Chart
+//         options={chartOptions}
+//         series={series}
+//         type="donut"
+//         className="w-full"
+//       />
+//     </div>
+//   );
+// };
+
+// export default React.memo(OverviewGraph)
