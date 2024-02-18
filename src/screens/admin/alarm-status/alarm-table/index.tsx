@@ -1,6 +1,6 @@
 import React from "react";
 import AlarmRow from "./AlarmRow";
-import Table from "../../../../libraries/Table";
+import Table from "../../../../css/table";
 
 const AlarmTable = ({ data }: any) => {
   const headers: string[] = ["Fault Type", "Date - Time", "Status"];

@@ -1,24 +1,16 @@
 import React from "react";
 
-type alarmRowType = {
-  ele: any;
-};
+// type productRowType = {
+//   ele: any;
+// };
+const AlarmRow = (props: any) => {
+  const {ele} = props;
 
-const AlarmRow: React.FC<alarmRowType> = ({ ele }) => {
   return (
-    <tr className="tableBodyTr hover:bg-gray-100 border-b-2">
-      <td className="tableBodyTd pl-5 py-4 text-gray-500 text-sm font-normal">
-        {" "}
-        {ele?.faultType}
-      </td>
-      <td className="tableBodyTd pl-5 py-4 text-gray-500 text-sm font-normal">
-        {" "}
-        {ele?.dateTime}
-      </td>
-      <td className="tableBodyTd pl-5 py-4 text-gray-500 text-sm font-normal">
-        {" "}
-        {ele?.status}
-      </td>
+    <tr className="hover:bg-gray-100 cursor-pointer">
+      <td className="tableBodyTd">{ele?.faultType}</td>
+      <td className="tableBodyTd">{ele?.dateTime}</td>
+      <td className="tableBodyTd">{ele?.status}</td>
     </tr>
   );
 };

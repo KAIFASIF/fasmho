@@ -1,13 +1,12 @@
 import { memo } from "react";
 import { Link } from "react-router-dom";
-import Table from "../../../../libraries/Table";
+
 import TableRow from "./TableRow";
+import Table from "../../../../css/table";
 
-
-
-const FaultOverviewTable = ({data}:any) => {
+const FaultOverviewTable = ({ data }: any) => {
   const headers: string[] = ["Date - Time", "BMS ID", "Fault Type"];
-  
+
   return (
     <div className="w-full h-full border-gray-200">
       <div className="flex flex-col justify-between">

@@ -1,46 +1,30 @@
 import React from "react";
-
 import { LiaEdit } from "react-icons/lia";
 import { FaCircle } from "react-icons/fa";
 
-type productRowType = {
-  ele: any;
-};
-const ProductRow: React.FC<productRowType> = ({ ele }) => {
+// type productRowType = {
+//   ele: any;
+// };
+const ProductRow = (props:any) => {
+  const { ele, iamTest } =props
+
   return (
-    <tr className="tableBodyTr hover:bg-gray-100 border-b-2">
+    <tr className="hover:bg-gray-100 cursor-pointer">
+      <td className="tableBodyTd">1</td>
+      <td className="tableBodyTd">1</td>
+      <td className="tableBodyTd">1</td>
+      <td className="tableBodyTd">1</td>
+      <td className="tableBodyTd">1</td>
       <td className="tableBodyTd">
-        {" "}
-        {ele?.vehicleNo}
-      </td>
-      <td className="tableBodyTd pl-5">
-        {" "}
-        {ele?.soc}
-      </td>
-      <td className="tableBodyTd">
-        {" "}
-        {ele?.cycleCount}
-      </td>
-      <td className="tableBodyTd  py-4 text-gray-500 text-sm font-normal pl-14">
         {" "}
         <FaCircle
           size={12}
           className={`${ele?.faultStatus ? "text-secondary" : "text-red-600"}`}
         />
       </td>
-      <td className="tableBodyTd pl-10 py-4 text-gray-500 text-sm font-normal">
-        <FaCircle
-          size={12}
-          className={`${ele?.bmsStatus ? "text-secondary" : "text-red-600"}`}
-        />
-      </td>
-      <td className={`tableBodyTd  py-4 text-gray-500 text-sm font-normal pl-12
-      ${ele?.operatingStatus ? "text-secondary" : "text-red-600"}`}>
+      <td className="tableBodyTd">
         {" "}
-        {ele?.operatingStatus ? "Active":"Inactive"}
-      </td>
-      <td className="tableBodyTd pl-8 py-4 text-gray-500 text-sm font-normal">
-        <LiaEdit size={25} className="cursor-pointer text-primary" />
+        <LiaEdit size={25} className="cursor-pointer text-primary" onClick={()=>iamTest(4)} />
       </td>
     </tr>
   );

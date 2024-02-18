@@ -26,8 +26,8 @@ const Navbar = () => {
       >
         {menus &&
           menus.length > 0 &&
-          menus.map((ele: any) => (
-            <div
+          menus.map((ele: any,index:number) => (
+            <div key={index}
               onClick={() =>navigate(ele?.path)}
               className="flex p-2  rounded my-2 hover:bg-gray-100"
             >

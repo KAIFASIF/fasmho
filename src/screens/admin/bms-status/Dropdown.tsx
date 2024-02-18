@@ -9,13 +9,13 @@ const Dropdown = () => {
   return (
     <div className="w-full border-2 border-gray-200 rounded">
       <select onChange={(e)=>alert(e.target.value)}
-        id="days"
+        id="days" 
         className={` border-2 border-gray-600 text-gray-900 text-sm rounded-lg 
        block w-full p-2.5 
            dark:text-white
             focus:border-none focus:outline-none`}
       >
-        <option selected disabled>
+        <option defaultValue="1 Day" disabled>
           -Select-
         </option>
         {timeLabels &&
