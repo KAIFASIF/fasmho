@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { IoMenuSharp } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { Link, useNavigate}from "react-router-dom";
 import { menus } from "../../data/menu";
+
 
 const Navbar = () => {
   const [open, setOpen] = useState<boolean>(false);
+  const navigate = useNavigate()
   return (
     <div className="w-full  shadow-sm shadow-blur-md shadow-gray-400 ">
       <div className="flex justify-between items-center px-5 p-4 w-full">
@@ -26,7 +28,7 @@ const Navbar = () => {
           menus.length > 0 &&
           menus.map((ele: any) => (
             <div
-              onClick={() => setOpen(false)}
+              onClick={() =>{ navigate(ele?.path) setOpen(false)}}
               className="flex p-2  rounded my-2 hover:bg-gray-100"
             >
               <Link to={ele?.path}>{ele?.title}</Link>
