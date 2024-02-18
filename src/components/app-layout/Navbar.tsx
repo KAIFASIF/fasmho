@@ -28,10 +28,11 @@ const Navbar = () => {
           menus.length > 0 &&
           menus.map((ele: any) => (
             <div
-              onClick={() =>{ navigate(ele?.path) setOpen(false)}}
+              onClick={() =>navigate(ele?.path)}
               className="flex p-2  rounded my-2 hover:bg-gray-100"
             >
-              <Link to={ele?.path}>{ele?.title}</Link>
+              <Link  onClick={()=> setOpen(false)}
+              to={ele?.path}>{ele?.title}</Link>
             </div>
           ))}
       </div>
