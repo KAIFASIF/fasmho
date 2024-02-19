@@ -11,7 +11,7 @@ const RoleWrapper = ({ role }: any) => {
   return (
     userRoles?.includes(role) && (
       <div className="flex flex-col lg:flex-row justify-between overflow-clip">
-        <nav className="lg:hidden w-full  z-20 bg-white  fixed ">
+        <nav className="lg:hidden w-full  z-20  bg-white fixed ">
           <Navbar />
         </nav>
         <aside
