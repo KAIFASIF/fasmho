@@ -6,7 +6,7 @@ type singleCircuitCardProps = {
 };
 const SingleCircuitCard: React.FC<singleCircuitCardProps> = ({ count }) => {
   return (
-    <div className="flex flex-col bg-gray-100 rounded w-full lg:px-4  mb-4 py-4">
+    <div className="flex flex-col bg-gray-100 px-4 rounded w-full lg:px-4  mb-4 py-4">
       <div className="flex  w-full  gap-x-2">
         <div className="w-[70%]">
           <p className="font-semibold text-lg">Short Circuit</p>

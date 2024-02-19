@@ -36,13 +36,10 @@ const AlarmStatus = () => {
   };
   return (
     <Layout isLoading={isLoading}>
-      <div className="w-full px-10 pt-5">
-        <section className="flex justify-end w-full pr-2">
+      <div className="w-full px-4 lg:px-10 pt-5">
+        <section className="flex justify-end w-full pr-2  py-2">
           <div className="flex w-40">
-            <Button
-              onClick={() => alert()}
-              className="flex justify-center"
-            >
+            <Button onClick={() => alert()} className="flex justify-center">
               <LuCopyPlus
                 className="text-white group-hover:text-primary"
                 size={20}
@@ -53,7 +50,7 @@ const AlarmStatus = () => {
             </Button>
           </div>
         </section>
-        <section className="grid grid-cols-1 lg:grid-cols-3 gap-x-4 mt-4">
+        <section className="grid grid-cols-1 lg:grid-cols-3 gap-x-4 mt-4 bg-white px-4 py-4">
           <section className=" lg:col-span-2 h-full w-full ">
             <div className="lg:col-span-4 ">
               <div className="flex justify-between px-2 w-full">
@@ -68,7 +65,7 @@ const AlarmStatus = () => {
             </div>
           </section>
 
-          <section className=" w-full  mt-10 lg:mt-0">
+          <section className="w-full  mt-10 lg:mt-0">
             <Circuit {...currentAlert} />
           </section>
         </section>

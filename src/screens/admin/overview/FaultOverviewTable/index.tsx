@@ -2,7 +2,8 @@ import { memo } from "react";
 import { Link } from "react-router-dom";
 
 import TableRow from "./TableRow";
-import Table from "../../../../css/table";
+import Table from "../../../../libraries/table";
+
 
 const FaultOverviewTable = ({ data }: any) => {
   const headers: string[] = ["Date - Time", "BMS ID", "Fault Type"];

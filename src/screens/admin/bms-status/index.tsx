@@ -31,7 +31,7 @@ const BmsStatus = () => {
   };
   return (
     <Layout isLoading={isLoading}>
-      <div className="px-10 pt-5 w-full">
+      <div className="px-4 pt-5 w-full gap-4">
         <StatusSection {...data} />
         <TemperatureGraphSection data={temperatureGraphData}/>
       </div>

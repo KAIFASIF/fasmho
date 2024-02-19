@@ -1,8 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Layout from "../../../components/Layout";
-import Table from "../../../css/table";
 import ProductRow from "./ProductRow";
+import Table from "../../../libraries/table";
 
 const headers: string[] = [
   "Vehicle No. / BMS ID - Time",
@@ -47,7 +47,7 @@ const Product = () => {
 
   return (
     <Layout isLoading={isLoading}>
-      <div className="pt-10 px-2 lg:px-10 bg-green-400 h-screen w-full">
+      <div className="px-4 pt-5  lg:px-10 py-10 w-full shadow-2xl">
         <Table
           headers={headers}
           tableData={data}

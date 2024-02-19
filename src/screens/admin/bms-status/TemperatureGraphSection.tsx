@@ -7,8 +7,8 @@ import Dropdown from "./Dropdown";
 
 const TemperatureGraphSection = ({ data }: any) => {
   return (
-    <div className="w-full flex  justify-between mt-10">
-      <div className="mt-8 flex-1">
+    <div className="w-full grid grid-cols-1 lg:grid-cols-5 mt-4 px-4  py-4 bg-white">
+      <div className="mt-4">
         <Dropdown />
         <RoundedBox className="bg-red-600 w-36 mt-4">
           <div className="bg-red-600 flex justify-center items-center w-full">
@@ -17,7 +17,7 @@ const TemperatureGraphSection = ({ data }: any) => {
           </div>
         </RoundedBox>
       </div>
-      <div className="w-[75%] mb-4 ">
+      <div className="col-span-4 mt-10 lg:mt-0">
         <Graph data={data} />
       </div>
     </div>

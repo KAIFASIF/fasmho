@@ -12,7 +12,7 @@ const Table = ({
   paginationOptions,
 }: any) => {
   return (
-    <div className="w-full bg-white shadow-xl">
+    <div className="w-full bg-white ">
       <div className="overflow-x-auto w-full  bg-white">
         <table className="min-w-full">
           <thead>

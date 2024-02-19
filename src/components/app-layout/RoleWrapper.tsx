@@ -27,12 +27,12 @@ const RoleWrapper = ({ role }: any) => {
             <Sidebar open={open} setOpen={setOpen} />
           </div>
         </aside>
-        <main className=" flex-1 z-10 w-full">
-          <div className="flex flex-col bg-white w-full  mt-20 lg:mt-0">
-            <div className="px-2 lg:px-10 w-full bg-white fixed z-20 py-4">
+        <main className=" flex-1 z-10 w-full bg-gray-100">
+          <div className="flex flex-col  w-full  mt-20 lg:mt-0">
+            <div className="px-2 lg:px-10 w-full bg-gray-100  fixed z-20 py-4">
               <Header />
             </div>
-            <div className="w-full  mt-10">
+            <div className="w-full mt-10">
               <Outlet />
             </div>
           </div>

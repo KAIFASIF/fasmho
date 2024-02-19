@@ -5,18 +5,16 @@ import RunningStatus from "./RunningStatus";
 
 const VehicleData = () => {
   return (
-    <div className="w-full">
-      <div className="w-full px-10  lg:px-10 lg:pt-5">
-        <section className="flex w-full">
-          <RunningStatus />
-        </section>
-        <section className="flex w-full mt-10">
-          <VehicleDataSection />
-        </section>
-        <section className="flex w-full mt-10 ">
-          <Rides />
-        </section>
-      </div>
+    <div className="w-full px-4 pt-5 lg:px-10 lg:pt-5">
+      <section className="bg-white w-full p-4">
+        <RunningStatus />
+      </section>
+      <section className="bg-white w-full p-4 mt-4">
+        <VehicleDataSection />
+      </section>
+      <section className=" bg-white w-full p-4 mt-4">
+        <Rides />
+      </section>
     </div>
   );
 };

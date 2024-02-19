@@ -37,19 +37,20 @@ const Dashboard = () => {
 
   return (
     <Layout isLoading={isLoading}>
-      <div className="flex flex-col items-center px-10 pt-5 w-full h-full ">
+      
+      <div className="flex flex-col items-center w-full px-4 pt-5 lg:px-10">
         {/* header Section */}
-        <header className="flex  items-center w-full gap-x-4  mt-2">
+        <header className="flex  items-center bg-white w-full gap-x-4  mt-2 p-4">
           <Header {...data} />
         </header>
 
-        <section className="flex w-full h-full mt-8  p-2">
+        <section className="flex w-full h-full mt-4  bg-white p-4">
           <ChargeSection {...data} stateCharge={stateCharge} />
         </section>
 
         {/* cell voltage Section */}
-        <section className="grid grid-cols-1 lg:grid-cols-8 w-full lg:gap-x-4 mt-10 lg:mt-10 md:px-4 lg:px-0  shadow-sm">
-          <section className="lg:col-span-4 ">
+        <section className="grid grid-cols-1 lg:grid-cols-8 w-full lg:gap-x-4 mt-10 lg:mt-10 px-4  py-4  shadow-sm bg-white">
+          <section className="lg:col-span-4">
             <div className="flex justify-between px-2 w-full">
               <p className="sub-heading">Cell Voltages</p>
               <Link to="/product" className="sub-heading text-primary">
@@ -60,7 +61,7 @@ const Dashboard = () => {
           </section>
 
           {/* Temperature section */}
-          <section className="col-span-3 mt-10 lg:mt-0 ">
+          <section className="col-span-3 mt-10 lg:mt-0">
             <div className="flex justify-between px-2 w-full">
               <p className="sub-heading">Temperature</p>
               <Link to="/product" className="sub-heading text-primary">
@@ -77,7 +78,7 @@ const Dashboard = () => {
         </section>
 
         {/* State of Health */}
-        <section className="grid grid-cols-1 lg:grid-cols-8 w-full lg:gap-x-4 mt-10 lg:mt-10 md:px-4 lg:px-0 ">
+        <section className="grid grid-cols-1 lg:grid-cols-8 w-full lg:gap-x-4 mt-10 lg:mt-10 px-4 bg-white pt-4 py-10">
           <section className="lg:col-span-4 ">
             <div className="flex justify-between px-2 w-full">
               <p className="sub-heading">State of Health</p>
@@ -89,7 +90,7 @@ const Dashboard = () => {
           </section>
 
           {/* Vehicle data section */}
-          <section className="col-span-4 mt-10 lg:mt-0 ">
+          <section className="col-span-4 mt-10 lg:mt-0">
             <VehicleDataSection />
           </section>
         </section>

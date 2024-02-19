@@ -10,7 +10,7 @@ const Circuit = ({
 }: any) => {
   console.log(shortCircuit);
   return (
-    <div className="bg-gray-100 rounded">
+    <div>
       <SingleCircuitCard count={shortCircuit?.shortCircuit} />
       <DoubleCircuitCard
         heading="Current Alert"

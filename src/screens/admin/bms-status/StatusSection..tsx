@@ -8,7 +8,7 @@ const StatusSection = ({
   cutOffStatus,
 }: any) => {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 md:px-20  lg:px-0 w-full gap-6">
+    <div className="grid grid-cols-1 lg:grid-cols-3 px-4  py-4 w-full gap-6 bg-white">
       <TemperatureCard temperature={temperature} />
       
       <div className="w-full flex-wrap shrink-0">

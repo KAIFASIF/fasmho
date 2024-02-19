@@ -3,13 +3,10 @@ import Chart from "react-apexcharts";
 import { ApexOptions } from "apexcharts";
 
 type graphProps = {
-  data: any
+  data: any;
 };
 
-const Graph: React.FC<graphProps> = ({
-  data,
-}) => {
-
+const Graph: React.FC<graphProps> = ({ data }) => {
   const options: ApexOptions = {
     chart: {
       id: "line-chart",
@@ -20,36 +17,35 @@ const Graph: React.FC<graphProps> = ({
       {
         name: "MCU Temp",
         data: data[0],
-        color:"#FFA600"
+        color: "#FFA600",
       },
       {
         name: "AFE Temp",
         data: data[1],
-        color:"#401641"
+        color: "#401641",
       },
       {
         name: "Board Temp",
         data: data[2],
-        color:"#00ff95"
-      }
+        color: "#00ff95",
+      },
     ],
     stroke: {
       width: 2,
       curve: "smooth",
-     
     },
     xaxis: {
-      categories: [1, 3, 5, 7, 9, 11,12,14,15,19,20,21],
+      categories: [1, 3, 5, 7, 9, 11, 12, 14, 15, 19, 20, 21],
     },
     dataLabels: {
       enabled: false,
     },
   };
-  
+
   return (
     data &&
     data.length > 0 && (
-      <div className="flex w-full">
+      <div className="flex bg-white shrink-0">
         <Chart
           options={options}
           series={options?.series}
@@ -63,7 +59,6 @@ const Graph: React.FC<graphProps> = ({
 };
 
 export default Graph;
-
 
 // import React from "react";
 // import Chart from "react-apexcharts";
@@ -87,9 +82,9 @@ export default Graph;
 //       {
 //         name: "series-1",
 //         data: data[0],
-//         color: "blue",        
+//         color: "blue",
 //       },
-     
+
 //     ],
 
 //     stroke: {

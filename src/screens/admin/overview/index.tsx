@@ -42,8 +42,8 @@ const Overview = () => {
 
   return (
     <Layout isLoading={isLoading}>
-      <div className="px-10 pt-5 z-20 w-full h-full">
-        <div className="flex flex-wrap bg-white z-40 gap-4 p-2">
+      <div className="px-4 lg:px-10 pt-5 z-20 w-full h-full">
+        <div className="flex flex-wrap bg-white z-40 gap-4 p-4 lg:px-10 lg:pt-10">
           <div className="w-[100%] lg:w-[15%]  shrink-0">
             <Statistics statistics={statistics} />
           </div>
@@ -54,7 +54,7 @@ const Overview = () => {
             <FaultOverviewTable data={faultOverview} />
           </div>
         </div>
-        <div className="flex flex-wrap bg-white z-40 gap-4">
+        <div className="flex flex-wrap bg-white z-40 gap-4 p-2 lg:px-10 ">
           <CardSection data={customers} />
         </div>
       </div>
