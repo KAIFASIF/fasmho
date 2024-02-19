@@ -19,8 +19,8 @@ const Navbar = () => {
 
       <div
         onClick={() => setOpen(false)}
-        className={`transition-all ease-in-out duration-500  mt-100 ${
-          open ? "h-60 opacity-100 " : "h-0 opacity-0 hidden"
+        className={`transition-all ease-in-out duration-500 mt-100  overflow--hidden bg-white ${
+          open ? "h-full opacity-100 " : "h-0 opacity-0"
         }  w-full px-10 `}
       >
         {menus &&
@@ -29,7 +29,8 @@ const Navbar = () => {
             <div
               key={index}
               onClick={() => navigate(ele?.path)}
-              className="flex p-2  rounded my-2 hover:bg-gray-100 bggreen-400 "
+              className={`flex p-2  rounded my-2 hover:bg-gray-100 
+               ${!open && "hidden"} `}
             >
               <Link onClick={() => setOpen(false)} to={ele?.path}>
                 {ele?.title}
